@@ -1,0 +1,9 @@
+.footer{
+    position: fixed;
+    bottom: 0;
+    justify-content: flex-end;
+    font-size: 0.7rem;
+    border-top: 1px solid rgb(158, 158, 158);
+    border-radius: 10px;
+    height: 5%;
+}

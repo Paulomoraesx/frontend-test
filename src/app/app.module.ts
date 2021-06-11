@@ -24,6 +24,7 @@ import { HomeComponent } from "./components/views/home/home.component";
 import { ClienteReadComponent } from "./components/views/cliente/cliente-read/cliente-read.component";
 import { ClienteCreateComponent } from "./components/views/cliente/cliente-create/cliente-create.component";
 import { FormsModule } from "@angular/forms";
+import { ClienteDeleteComponent } from './components/views/cliente/cliente-delete/cliente-delete.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { FormsModule } from "@angular/forms";
     HomeComponent,
     ClienteReadComponent,
     ClienteCreateComponent,
+    ClienteDeleteComponent,
   ],
   imports: [
     BrowserModule,

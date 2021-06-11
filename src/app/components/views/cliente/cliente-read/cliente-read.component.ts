@@ -22,7 +22,6 @@ export class ClienteReadComponent implements OnInit {
 
   findAll(){
     this.service.findAll().subscribe(resposta => {
-      console.log(resposta);
       this.clientes = resposta;
     })
   }

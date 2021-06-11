@@ -19,9 +19,19 @@ export class ClienteService {
     return this.http.get<ClienteModel[]>(url)
   }
 
+  findById(id: String): Observable<ClienteModel>{
+    const url = `${this.baseUrl}clientes/${id}`
+    return this.http.get<ClienteModel>(url)
+  }
+
   create(cliente: ClienteModel):Observable<ClienteModel>{
     const url = `${this.baseUrl}clientes`
     return this.http.post<ClienteModel>(url,cliente);
+  }
+
+  delete(id: String): Observable<void>{
+    const url = `${this.baseUrl}clientes/${id}`
+    return this.http.delete<void>(url)
   }
 
   mensagem(str: String): void {
@@ -30,6 +40,5 @@ export class ClienteService {
       verticalPosition: 'top',
       duration: 3000
     })
-
   }
 }

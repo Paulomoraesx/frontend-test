@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { HttpClientModule } from "@angular/common/http"
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -15,9 +15,15 @@ import { MatListModule } from "@angular/material/list";
 import { MatIconModule } from "@angular/material/icon";
 import { MatCardModule } from "@angular/material/card";
 import { MatTableModule } from "@angular/material/table";
+import { MatButtonModule } from "@angular/material/button";
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { HomeComponent } from "./components/views/home/home.component";
 import { ClienteReadComponent } from "./components/views/cliente/cliente-read/cliente-read.component";
+import { ClienteCreateComponent } from "./components/views/cliente/cliente-create/cliente-create.component";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -27,6 +33,7 @@ import { ClienteReadComponent } from "./components/views/cliente/cliente-read/cl
     NavComponent,
     HomeComponent,
     ClienteReadComponent,
+    ClienteCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +45,12 @@ import { ClienteReadComponent } from "./components/views/cliente/cliente-read/cl
     MatIconModule,
     MatCardModule,
     MatTableModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule,
+    FormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent],

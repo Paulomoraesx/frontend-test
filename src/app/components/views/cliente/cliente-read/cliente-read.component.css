@@ -11,7 +11,21 @@
     color: rgb(0, 0, 0);
     font-family: Comic san;
 }
+button{
+    margin-bottom: .8rem;
+}
+
 .tabela{
     width: 100%;
+}
+.botao-editar{
+    color: gray;
 
+}
+.botao-deletar{
+    margin-left: 0.5rem;
+    color: gray;
+}
+.mat-header{
+    width: 5rem;
 }

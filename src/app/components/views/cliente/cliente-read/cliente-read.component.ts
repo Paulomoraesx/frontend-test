@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ClienteService } from '../cliente.service';
 import { ClienteModel } from '../clienteModel.model';
 
@@ -13,7 +14,7 @@ export class ClienteReadComponent implements OnInit {
   
   displayedColumns: string[] = ['id', 'nome', 'idade', 'acoes'];
 
-  constructor(private service: ClienteService) { }
+  constructor(private service: ClienteService, private router:Router) { }
 
   ngOnInit(): void {
     this.findAll();
@@ -24,6 +25,10 @@ export class ClienteReadComponent implements OnInit {
       console.log(resposta);
       this.clientes = resposta;
     })
+  }
+  navegarParaClienteCreate(){
+    this.router.navigate(["clientes/create"])
+
   }
 
 }

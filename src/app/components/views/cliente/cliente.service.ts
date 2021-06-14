@@ -9,36 +9,39 @@ import { ClienteModel } from "./clienteModel.model";
   providedIn: "root",
 })
 export class ClienteService {
-
   baseUrl: String = environment.baseUrl;
 
-  constructor(private http: HttpClient, private _snack: MatSnackBar) { }
+  constructor(private http: HttpClient, private _snack: MatSnackBar) {}
 
-  findAll():Observable<ClienteModel[]>{
-    const url = `${this.baseUrl}clientes`
-    return this.http.get<ClienteModel[]>(url)
+  findAll(): Observable<ClienteModel[]> {
+    const url = `${this.baseUrl}clientes`;
+    return this.http.get<ClienteModel[]>(url);
   }
 
-  findById(id: String): Observable<ClienteModel>{
-    const url = `${this.baseUrl}clientes/${id}`
-    return this.http.get<ClienteModel>(url)
+  findById(id: String): Observable<ClienteModel> {
+    const url = `${this.baseUrl}clientes/${id}`;
+    return this.http.get<ClienteModel>(url);
   }
 
-  create(cliente: ClienteModel):Observable<ClienteModel>{
-    const url = `${this.baseUrl}clientes`
-    return this.http.post<ClienteModel>(url,cliente);
+  create(cliente: ClienteModel): Observable<ClienteModel> {
+    const url = `${this.baseUrl}clientes`;
+    return this.http.post<ClienteModel>(url, cliente);
+  }
+  update(cliente: ClienteModel): Observable<void> {
+    const url = `${this.baseUrl}clientes`;
+    return this.http.put<void>(url, cliente);
   }
 
-  delete(id: String): Observable<void>{
-    const url = `${this.baseUrl}clientes/${id}`
-    return this.http.delete<void>(url)
+  delete(id: String): Observable<void> {
+    const url = `${this.baseUrl}clientes/${id}`;
+    return this.http.delete<void>(url);
   }
 
   mensagem(str: String): void {
-    this._snack.open(`${str}`, 'OK', {
-      horizontalPosition: 'end',
-      verticalPosition: 'top',
-      duration: 3000
-    })
+    this._snack.open(`${str}`, "OK", {
+      horizontalPosition: "end",
+      verticalPosition: "top",
+      duration: 3000,
+    });
   }
 }

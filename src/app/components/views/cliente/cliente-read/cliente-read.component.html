@@ -21,15 +21,15 @@
 
       <!-- Idade Column -->
       <ng-container matColumnDef="idade">
-        <th mat-header-cell *matHeaderCellDef>IDADE</th>
-        <td mat-cell *matCellDef="let row">{{ row.idade }}</td>
+        <th mat-header-cell *matHeaderCellDef>NASCIMENTO</th>
+        <td mat-cell *matCellDef="let row" > {{ row.idade | date:"dd/MM/yyyy" }}</td>
       </ng-container>
 
       <!-- Ações Column -->
       <ng-container matColumnDef="acoes">
         <th class="mat-header" mat-header-cell *matHeaderCellDef>AÇÕES</th>
         <td mat-cell *matCellDef="let row">
-          <a class="botao-editar" href="#">
+          <a class="botao-editar" routerLink="update/{{ row.id }}">
             <i class="material-icons">edit</i>
           </a>
           <a class="botao-deletar" routerLink="delete/{{ row.id }}">

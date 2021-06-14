@@ -1,6 +1,10 @@
-import { NgModule } from "@angular/core";
+import { LOCALE_ID, NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { HttpClientModule } from "@angular/common/http";
+
+import {registerLocaleData} from '@angular/common';
+import br from '@angular/common/locales/pt';
+registerLocaleData(br, 'pt-BR');
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -25,6 +29,7 @@ import { ClienteReadComponent } from "./components/views/cliente/cliente-read/cl
 import { ClienteCreateComponent } from "./components/views/cliente/cliente-create/cliente-create.component";
 import { FormsModule } from "@angular/forms";
 import { ClienteDeleteComponent } from './components/views/cliente/cliente-delete/cliente-delete.component';
+import { ClienteUpdateComponent } from './components/views/cliente/cliente-update/cliente-update.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +41,7 @@ import { ClienteDeleteComponent } from './components/views/cliente/cliente-delet
     ClienteReadComponent,
     ClienteCreateComponent,
     ClienteDeleteComponent,
+    ClienteUpdateComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,9 +58,15 @@ import { ClienteDeleteComponent } from './components/views/cliente/cliente-delet
     FormsModule,
     MatInputModule,
     MatFormFieldModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: LOCALE_ID,
+      useValue: 'pt-BR'
+
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
